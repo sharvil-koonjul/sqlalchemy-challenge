@@ -129,6 +129,7 @@ def tobs():
                                func.min(Measurement.tobs),\
                                func.max(Measurement.tobs), \
                                func.avg(Measurement.tobs))\
+                               .filter(Measurement.date >= dt.date(2017,8,23) - dt.timedelta(days=365))\
                                  .filter(Measurement.station == 'USC00519281').all()
 
     # Close the session
